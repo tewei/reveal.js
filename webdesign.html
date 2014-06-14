@@ -1,0 +1,232 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="css/theme/default.css" id="theme">
+        <link rel="stylesheet" href="css/reveal.min.css">
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+        <script>
+            if( window.location.search.match( /print-pdf/gi ) ) {
+                var link = document.createElement( 'link' );
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = 'css/print/pdf.css';
+                document.getElementsByTagName( 'head' )[0].appendChild( link );
+            }
+        </script>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <h2>Reveal.js</h2>
+                    <h5>快速製作投影片</h5>
+                    <ol>
+                        <li class="fragment fade-in">Based On Javascript只需要瀏覽器就可播放</li>
+                        <li class="fragment fade-in">使用簡單的HTML/Markdown進行編輯</li>
+                        <li class="fragment fade-in">CSS 3D Transform轉場</li>
+                        <li class="fragment fade-in">支援Code Highligt、遙控、匯出pdf...etc</li>
+                        <li class="fragment fade-in">拋開powerpoint吧xD</li>
+                    </ol>
+                </section>
+                <section>
+                    <section>
+                        <h2>Install</h2>
+                        <h5>懶人快速安裝法</h5>
+                        <ol>
+                            <li class="fragment fade-in"><a href="https://github.com/hakimel/reveal.js">https://github.com/hakimel/reveal.js</a></li>
+                            <li class="fragment fade-in">Download, Unzip</li>
+                            <li class="fragment fade-in">在reveal.js資料夾內新增一個html檔案</li>
+                            <li class="fragment fade-in">先把<code>head</code>跟<code>body</code>寫好xD</li>
+                            <li class="fragment fade-in">Let's Roll~</li>
+                        </ol>
+                    </section>
+                    <section>
+                        <h2>引入css檔案</h2>
+                        <pre>
+                            <code>
+
+<!-- 在Head裡 -->
+    <!-- 主題 -->
+    <link rel="stylesheet" href="css/theme/default.css" id="theme">
+    <!-- Reveal.js -->
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <!-- Syntax Highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+                            
+
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h2>開始寫slide</h2>
+                        <pre>
+                            <code>
+<!-- 在Body裡 -->
+    <div class="reveal">
+        <div class="slides">
+            <section&nbsp>
+                這就是你的投影片內容
+            </section&nbsp>
+        </div>
+    </div>
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h2>最後再加上</h2>
+                        <pre>
+                            <code>
+<!-- 在Body"的最後" -->
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+    <script type="text/javascript">
+    Reveal.initialize({ ...以下省略
+    </script>
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h2>放心這一切都可以到readme裡看得夠xD</h2>
+                        <h3 class="fragment fade-in">不過現在看起來還不夠炫</h3>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>上下左右</h2>
+                        <pre><code>
+<section&nbsp>
+母層
+    <section&nbsp>子層</section&nbsp>
+    <section&nbsp>子層</section&nbsp>
+</section&nbsp>
+<section&nbsp>
+    母層
+</section&nbsp>
+                        </code></pre>
+                        <h4>子層之間用上下轉場，母層間用左右，另外在瀏覽時按esc會看到overview哦~!!!</h4>
+                    </section>
+                    <section>
+                        <h2>更改主題</h2>
+                        <pre><code>
+<link rel="stylesheet" href="css/theme/主題名稱.css" id="theme">
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2>各種單行特效</h2>
+                        <pre><code>
+<p class="fragment 特效">一個段落</p>
+                        </code></pre>
+                        <h4>其他tag也行~</h4>
+                        <code>grow, shrink, roll-in, fade-in, fade-out, highlight-顏色, highlight-current-顏色, current-visible</code>
+                    </section>
+                    <section>
+                        <p class="fragment grow">grow</p>
+                        <p class="fragment shrink">shrink</p>
+                        <p class="fragment roll-in">roll-in</p>
+                        <p class="fragment fade-in"><span class="fragment fade-out">fade-in than fade-out</span></p>
+                        <p class="fragment current-visible">visible only once</p>
+                        <p class="fragment highlight-current-blue">highlight-current-blue</p>
+                        <p class="fragment highlight-red">highlight-red</p>
+                        <p class="fragment highlight-green">highlight-green</p>
+                        <p class="fragment highlight-blue">highlight-blue</p>
+                    </section>
+                    <section>
+                        <h2>How about背景</h2>
+                        <pre><code>
+<section&nbsp data-background="圖片URL或色碼">
+    投影片內容
+</section&nbsp>
+                        </code></pre>
+                        <code>data-background-size="大小(Optional)"<br />data-background-repeat="是否重複(Optional)"</code>
+                    </section>
+                    <section>
+                        <h2>轉場效果</h2>
+                        <pre><code>
+<section&nbsp data-transition="效果" data-transition-speed"速度">
+    投影片內容
+</section&nbsp>
+                        </code></pre>
+                        <code>default,  cube, page, concave, zoom, linear, fade, none</code>
+                    </section>
+                </section>
+                <section data-transition="concave">
+                        <h2>concave</h2>
+                </section>
+                <section data-transition="zoom">
+                    <h2>~ZOOM~</h2>
+                </section>
+                <section>
+                    <h2>如果你有background</h2>
+                    <pre><code>
+<section&nbsp data-background-transition="效果">
+    投影片內容
+</section&nbsp>
+                        </code></pre>
+                        <code>default, nonem, slide, concave, convex, zoom</code>
+                </section>
+                 <section data-background="violet" data-background-transition="slide">
+                        <h2>我的slide slide進來了</h2>
+                </section>
+                <section>
+                    <h2>大概就是這樣拉喵</h2>
+                </section>
+            </div>
+        </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+    <script type="text/javascript">
+    Reveal.initialize({
+
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        dependencies: [
+        // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+        { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+        // Interpret Markdown in <section> elements
+        { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+
+        // Syntax highlight for <code> elements
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+
+        // Zoom in and out with Alt+click
+        { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+
+        // Speaker notes
+        { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+
+        // Remote control your reveal.js presentation using a touch device
+        //{ src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } },
+
+        // MathJax
+        { src: 'plugin/math/math.js', async: true }
+        ]
+    });
+    Reveal.configure({ slideNumber: true });
+    </script>
+    </body>
+</html>
